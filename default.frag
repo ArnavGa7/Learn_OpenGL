@@ -27,7 +27,6 @@ struct Light{
     float quadratic;
 	
 	vec3 Position;
-	vec3 Direction;
 	float innercutoff;
 	float outercutoff;
 };
@@ -61,18 +60,12 @@ void main()
 	float Attenuation = 1.0 / (light.constant + light.linear * distances + light.quadratic * (distances * distances)); 
 
 	// Multiply the Attenuation to the values;
-
 	ambient *= Attenuation;
 	diffuse *= Attenuation;
 	specular *= Attenuation;
 
-	// Spotlight
-	float theta = dot(light_Dir, normalize(-light.Direction));
-	float epsilon = light.innercutoff - light.outercutoff;
-	float intensity = clamp((theta - light.outercutoff) / epsilon, 0.0, 1.0); 
 
-	diffuse *= intensity;
-	specular *= intensity;
+	
 
 
 	vec3 result = (ambient + diffuse + specular);

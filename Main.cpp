@@ -95,11 +95,11 @@ int main(){
 			cube.Position = cubePositions[i];
 			cube.angle = 20.0f * i;
 
-			cube.Draw(view, projection, light_sorce1.Color, light_sorce1.Position, camera.Postion, camera.Forward);
+			cube.Draw(view, projection, light_sorce1.Color, light_sorce1.Position, camera.Postion);
 			
 		}
 
-		light_sorce1.Draw(view, projection, light_sorce1.Color, light_sorce1.Position ,camera.Postion, camera.Forward);
+		light_sorce1.Draw(view, projection, light_sorce1.Color, light_sorce1.Position ,camera.Postion);
 	
 	
 		// The Swap Buffer
