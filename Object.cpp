@@ -45,7 +45,7 @@ void Object::Draw(glm::mat4 view, glm::mat4 projection,glm::vec3 light_Color, gl
         glUniformMatrix4fv(glGetUniformLocation(shader.ID, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
 
         // 
-        glUniform3fv(glGetUniformLocation(shader.ID, "light_Position"), 1, glm::value_ptr(Light_Position));
+      
         glUniform3fv(glGetUniformLocation(shader.ID, "view_Position"), 1, glm::value_ptr(camera_Position));
 
         // This is from light.frag
@@ -53,7 +53,7 @@ void Object::Draw(glm::mat4 view, glm::mat4 projection,glm::vec3 light_Color, gl
 
 
         // For the Light Struct
-        glUniform3f(glGetUniformLocation(shader.ID, "light.ambient"), 0.1f, 0.1f, 0.1f);
+        glUniform3f(glGetUniformLocation(shader.ID, "light.ambient"), 0.3f, 0.3f, 0.3f);
         glUniform3f(glGetUniformLocation(shader.ID, "light.diffuse"), 1.0f, 1.0f, 1.0f);
         glUniform3f(glGetUniformLocation(shader.ID, "light.specular"), 1.0f, 1.0f, 1.0f);
 
@@ -62,7 +62,7 @@ void Object::Draw(glm::mat4 view, glm::mat4 projection,glm::vec3 light_Color, gl
         glUniform1f(glGetUniformLocation(shader.ID, "light.quadratic"), 0.009f);
 
 
-        glUniform3fv(glGetUniformLocation(shader.ID, "light.Position"), 1, glm::value_ptr(camera_Position));
+        glUniform3fv(glGetUniformLocation(shader.ID, "light.Position"), 1, glm::value_ptr(Light_Position));
         glUniform3fv(glGetUniformLocation(shader.ID, "light.Direction"), 1, glm::value_ptr(camera_Front));
         glUniform1f(glGetUniformLocation(shader.ID,  "light.innercutoff"), glm::cos(glm::radians(12.5f)));
         glUniform1f(glGetUniformLocation(shader.ID, "light.outercutoff"), glm::cos(glm::radians(17.5f)));

@@ -7,7 +7,6 @@ in vec2 Texture;
 
 
 
-uniform vec3 light_Position;
 uniform vec3 view_Position;
 
 
@@ -46,7 +45,7 @@ void main()
 
 	// Diffuse Lighting
 	vec3 norm = normalize(Normal);
-	vec3 light_Dir = normalize(light_Position - FragPos);
+	vec3 light_Dir = normalize(light.Position - FragPos);
 	float diff = max(dot(norm, light_Dir), 0.0);
 	vec3 diffuse = diff * vec3(texture(material.diffuse, Texture)) * light.diffuse;
 	
@@ -58,7 +57,7 @@ void main()
 
 
 	//Attenuation
-	float distances = length(light_Position - FragPos);
+	float distances = length(light.Position - FragPos);
 	float Attenuation = 1.0 / (light.constant + light.linear * distances + light.quadratic * (distances * distances)); 
 
 	// Multiply the Attenuation to the values;
@@ -74,19 +73,8 @@ void main()
 
 	diffuse *= intensity;
 	specular *= intensity;
-	vec3 result;
-	if(theta > light.innercutoff)
-	{
-		// Print result for spotlight;
-		result = (ambient + diffuse + specular);
 
-	}
-	else
-	{
 
-	    result = ambient;
-	}
-	
-
+	vec3 result = (ambient + diffuse + specular);
 	FragColor = vec4(result, 1.0);
 }
