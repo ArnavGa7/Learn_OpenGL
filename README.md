@@ -12,6 +12,7 @@ Learning modern OpenGL in C++.
 - Camera Movement
 - GLSL Shaders
 - Light Maps
+- Light Casters
 ## Technologies
 
 - C++
