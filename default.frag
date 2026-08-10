@@ -29,7 +29,8 @@ struct Light{
 	
 	vec3 Position;
 	vec3 Direction;
-	float cutoff;
+	float innercutoff;
+	float outercutoff;
 };
 
 uniform Material material;
@@ -68,9 +69,13 @@ void main()
 
 	// Spotlight
 	float theta = dot(light_Dir, normalize(-light.Direction));
+	float epsilon = light.innercutoff - light.outercutoff;
+	float intensity = clamp((theta - light.outercutoff) / epsilon, 0.0, 1.0); 
 
+	diffuse *= intensity;
+	specular *= intensity;
 	vec3 result;
-	if(theta > light.cutoff)
+	if(theta > light.innercutoff)
 	{
 		// Print result for spotlight;
 		result = (ambient + diffuse + specular);
@@ -78,6 +83,7 @@ void main()
 	}
 	else
 	{
+
 	    result = ambient;
 	}
 	
