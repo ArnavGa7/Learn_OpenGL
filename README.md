@@ -1,4 +1,4 @@
-# OpenGL Lighting
+# OpenGL 
 
 Learning modern OpenGL in C++.
 
