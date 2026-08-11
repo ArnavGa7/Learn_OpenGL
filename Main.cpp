@@ -14,16 +14,16 @@
 
 glm::vec3 cubePositions[] =
 {
-	glm::vec3(-8.0f,  3.0f, -6.0f),
-	glm::vec3(5.0f, -4.0f, -12.0f),
-	glm::vec3(-3.0f,  6.0f, -16.0f),
-	glm::vec3(8.0f,  4.0f, -10.0f),
-	glm::vec3(0.0f, -6.0f, -9.0f),
-	glm::vec3(-7.0f, -2.0f, -18.0f),
-	glm::vec3(6.0f,  1.0f, -20.0f),
-	glm::vec3(-1.0f,  5.0f, -24.0f),
-	glm::vec3(10.0f, -3.0f, -17.0f),
-	glm::vec3(-10.0f,  0.0f, -13.0f)
+	glm::vec3(0.0f,  0.0f,  0.0f),
+	glm::vec3(2.0f,  5.0f, -15.0f),
+	glm::vec3(-1.5f, -2.2f, -2.5f),
+	glm::vec3(-3.8f, -2.0f, -12.3f),
+	glm::vec3(2.4f, -0.4f, -3.5f),
+	glm::vec3(-1.7f,  3.0f, -7.5f),
+	glm::vec3(1.3f, -2.0f, -2.5f),
+	glm::vec3(1.5f,  2.0f, -2.5f),
+	glm::vec3(1.5f,  0.2f, -1.5f),
+	glm::vec3(-1.3f,  1.0f, -1.5f)
 };
 
 
@@ -46,7 +46,7 @@ int main(){
 	// Create the Object + the Light Sorce
 	Object cube(CubeVertices, CubeVerticesSize, CubeIndiecs,CubeIndiecsSize , "default.vert", "default.frag");
 	Object light_sorce1(CubeVertices, CubeVerticesSize, CubeIndiecs, CubeIndiecsSize, "light.vert", "light.frag");
-	
+	Object light_sorce2(CubeVertices, CubeVerticesSize, CubeIndiecs, CubeIndiecsSize, "light.vert", "light.frag");
 
 	Texture diffuse("Texture's/container2.png");
 	Texture specular("Texture's/container2_specular.png");
@@ -56,9 +56,14 @@ int main(){
 	cube.Scale = glm::vec3(1.0f);
 
 
-	light_sorce1.Position = glm::vec3(2.0f, 2.0f, 4.5f);
-	light_sorce1.Color = glm::vec3(1.0f, 1.0f, 1.0f);
+	light_sorce1.Position = glm::vec3(0.7f, 0.2f, 2.0f);
+	light_sorce1.Color = glm::vec3(1.0f,0.0f, 0.0f);
 	light_sorce1.Scale = glm::vec3(0.5f);
+
+
+	light_sorce2.Position = glm::vec3(2.3f, -3.3f, -4.0f);
+	light_sorce2.Color = glm::vec3(0.0f, 0.0f, 1.0f);
+	light_sorce2.Scale = glm::vec3(0.5f);
 
 
 	// While Loop
@@ -95,12 +100,12 @@ int main(){
 			cube.Position = cubePositions[i];
 			cube.angle = 20.0f * i;
 
-			cube.Draw(view, projection, light_sorce1.Color, light_sorce1.Position, camera.Postion);
+			cube.Draw(view, projection, light_sorce1.Color, light_sorce1.Position, light_sorce2.Position,camera.Postion);
 			
 		}
 
-		light_sorce1.Draw(view, projection, light_sorce1.Color, light_sorce1.Position ,camera.Postion);
-	
+		light_sorce1.Draw(view, projection, light_sorce1.Color, light_sorce1.Position, light_sorce2.Position,camera.Postion);
+		light_sorce2.Draw(view, projection, light_sorce2.Color, light_sorce2.Position, light_sorce2.Position, camera.Postion);
 	
 		// The Swap Buffer
 		window.SwapBuffers();
