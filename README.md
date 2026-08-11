@@ -26,7 +26,7 @@ Learning modern OpenGL in C++.
 
 - ✅ Phong Lighting
 - ✅ Materials
-- ⏳ Multiple Light Sources
+- ✅ Multiple Light Sources
 - ⏳ Model Loading
 - ⏳ Shadow Mapping
 
