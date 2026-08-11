@@ -27,7 +27,7 @@ Object::Object(GLfloat* vertices, GLsizeiptr vertexSize, GLuint* indices, GLsize
 }
 
 // Draw Function 
-void Object::Draw(glm::mat4 view, glm::mat4 projection,glm::vec3 light_Color, glm::vec3 Light_Position1,glm::vec3 Light_Position2,glm::vec3 camera_Position){
+void Object::Draw(glm::mat4 view, glm::mat4 projection,glm::vec3 light_Color, glm::vec3 Light_Position1,glm::vec3 camera_Position){
 
         shader.Active();
 
@@ -54,22 +54,14 @@ void Object::Draw(glm::mat4 view, glm::mat4 projection,glm::vec3 light_Color, gl
 
         // For the Point Light Struct(0)
         glUniform3f(glGetUniformLocation(shader.ID, "point_light[0].ambient"), 0.3f, 0.3f, 0.3f);
-        glUniform3f(glGetUniformLocation(shader.ID, "point_light[0].diffuse"), 0.0f, 1.0f, 0.0f);
-        glUniform3f(glGetUniformLocation(shader.ID, "point_light[0].specular"), 0.0f, 1.0f, 0.0f);
+        glUniform3f(glGetUniformLocation(shader.ID, "point_light[0].diffuse"), 1.0f, 1.0f, 1.0f);
+        glUniform3f(glGetUniformLocation(shader.ID, "point_light[0].specular"), 1.0f, 1.0f, 1.0f);
         glUniform1f(glGetUniformLocation(shader.ID, "point_light[0].constant"), 1.0f);
         glUniform1f(glGetUniformLocation(shader.ID, "point_light[0].linear"),  0.00018f);
         glUniform1f(glGetUniformLocation(shader.ID, "point_light[0].quadratic"), 0.009f);
         glUniform3fv(glGetUniformLocation(shader.ID, "point_light[0].Position"), 1, glm::value_ptr(Light_Position1));
 
         // For the Point Light Struct(1)
-
-        glUniform3f(glGetUniformLocation(shader.ID, "point_light[1].ambient"), 0.3f, 0.3f, 0.3f);
-        glUniform3f(glGetUniformLocation(shader.ID, "point_light[1].diffuse"), 0.0f, 1.0f, 1.0f);
-        glUniform3f(glGetUniformLocation(shader.ID, "point_light[1].specular"), 0.0f, 1.0f, 1.0f);
-        glUniform1f(glGetUniformLocation(shader.ID, "point_light[1].constant"), 1.0f);
-        glUniform1f(glGetUniformLocation(shader.ID, "point_light[1].linear"), 0.00014f);
-        glUniform1f(glGetUniformLocation(shader.ID, "point_light[1].quadratic"), 0.0012f);
-        glUniform3fv(glGetUniformLocation(shader.ID, "point_light[1].Position"), 1, glm::value_ptr(Light_Position2));
 
         glUniform3f(glGetUniformLocation(shader.ID, "dirlight.Direction"), -0.2, -1.0, -0.3);
 

@@ -21,5 +21,5 @@ public:
 	float angle;
 	Object(GLfloat* vertices, GLsizeiptr verticesSize,GLuint* indices, GLsizeiptr indicesSize, const char* VertexShader, const char* FragmentSize);
 	
-	void Draw(glm::mat4 view, glm::mat4 projection,glm::vec3 light_Color,glm::vec3 Light_Position1, glm::vec3 Light_Position2,glm::vec3 camera_Position);
+	void Draw(glm::mat4 view, glm::mat4 projection,glm::vec3 light_Color,glm::vec3 Light_Position1,glm::vec3 camera_Position);
 };

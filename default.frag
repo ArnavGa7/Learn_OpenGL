@@ -38,7 +38,7 @@ struct DirLight{
 };
 
 
-#define NR_POINT_LIGHTS 2
+#define NR_POINT_LIGHTS 1
 uniform PointLight point_light[NR_POINT_LIGHTS];
 uniform Material material;
 uniform DirLight dirlight;

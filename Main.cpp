@@ -47,7 +47,7 @@ int main(){
 	// Create the Object + the Light Sorce
 	Object cube(CubeVertices, CubeVerticesSize, CubeIndiecs,CubeIndiecsSize , "default.vert", "default.frag");
 	Object light_sorce1(CubeVertices, CubeVerticesSize, CubeIndiecs, CubeIndiecsSize, "light.vert", "light.frag");
-	Object light_sorce2(CubeVertices, CubeVerticesSize, CubeIndiecs, CubeIndiecsSize, "light.vert", "light.frag");
+
 
 	Texture diffuse("Texture's/container2.png");
 	Texture specular("Texture's/container2_specular.png");
@@ -58,18 +58,16 @@ int main(){
 
 
 	light_sorce1.Position = glm::vec3(0.7f, 0.2f, -30.0f);
-	light_sorce1.Color = glm::vec3(0.0f,1.0f, 0.0f);
+	light_sorce1.Color = glm::vec3(1.0f,1.0f, 1.0f);
 	light_sorce1.Scale = glm::vec3(0.5f);
 
 
-	light_sorce2.Position = glm::vec3(2.3f, -3.3f, -4.0f);
-	light_sorce2.Color = glm::vec3(0.0f, 1.0f, 0.0f);
-	light_sorce2.Scale = glm::vec3(0.5f);
+
 
 
 	// While Loop
 	while (!window.WindowShouldClose()) {
-		glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+		glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		double xpos, ypos;
@@ -101,12 +99,12 @@ int main(){
 			cube.Position = cubePositions[i];
 			cube.angle = 20.0f * i;
 
-			cube.Draw(view, projection, light_sorce1.Color, light_sorce1.Position, light_sorce2.Position,camera.Postion);
+			cube.Draw(view, projection, light_sorce1.Color, light_sorce1.Position,camera.Postion);
 			
 		}
 
-		light_sorce1.Draw(view, projection, light_sorce1.Color, light_sorce1.Position, light_sorce2.Position,camera.Postion);
-		light_sorce2.Draw(view, projection, light_sorce2.Color, light_sorce2.Position, light_sorce2.Position, camera.Postion);
+		light_sorce1.Draw(view, projection, light_sorce1.Color, light_sorce1.Position,camera.Postion);
+
 	
 		// The Swap Buffer
 		window.SwapBuffers();
