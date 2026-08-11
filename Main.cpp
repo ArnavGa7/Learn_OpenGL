@@ -14,17 +14,18 @@
 
 glm::vec3 cubePositions[] =
 {
-	glm::vec3(0.0f,  0.0f,  0.0f),
-	glm::vec3(2.0f,  5.0f, -15.0f),
-	glm::vec3(-1.5f, -2.2f, -2.5f),
-	glm::vec3(-3.8f, -2.0f, -12.3f),
-	glm::vec3(2.4f, -0.4f, -3.5f),
-	glm::vec3(-1.7f,  3.0f, -7.5f),
-	glm::vec3(1.3f, -2.0f, -2.5f),
-	glm::vec3(1.5f,  2.0f, -2.5f),
-	glm::vec3(1.5f,  0.2f, -1.5f),
-	glm::vec3(-1.3f,  1.0f, -1.5f)
+	glm::vec3(-8.0f,  3.0f, -6.0f),
+	glm::vec3(5.0f, -4.0f, -12.0f),
+	glm::vec3(-3.0f,  6.0f, -16.0f),
+	glm::vec3(8.0f,  4.0f, -10.0f),
+	glm::vec3(0.0f, -6.0f, -9.0f),
+	glm::vec3(-7.0f, -2.0f, -18.0f),
+	glm::vec3(6.0f,  1.0f, -20.0f),
+	glm::vec3(-1.0f,  5.0f, -24.0f),
+	glm::vec3(10.0f, -3.0f, -17.0f),
+	glm::vec3(-10.0f,  0.0f, -13.0f)
 };
+
 
 
 // Main function of the Main File(C++)
@@ -56,19 +57,19 @@ int main(){
 	cube.Scale = glm::vec3(1.0f);
 
 
-	light_sorce1.Position = glm::vec3(0.7f, 0.2f, 2.0f);
-	light_sorce1.Color = glm::vec3(1.0f,0.0f, 0.0f);
+	light_sorce1.Position = glm::vec3(0.7f, 0.2f, -30.0f);
+	light_sorce1.Color = glm::vec3(0.0f,1.0f, 0.0f);
 	light_sorce1.Scale = glm::vec3(0.5f);
 
 
 	light_sorce2.Position = glm::vec3(2.3f, -3.3f, -4.0f);
-	light_sorce2.Color = glm::vec3(0.0f, 0.0f, 1.0f);
+	light_sorce2.Color = glm::vec3(0.0f, 1.0f, 0.0f);
 	light_sorce2.Scale = glm::vec3(0.5f);
 
 
 	// While Loop
 	while (!window.WindowShouldClose()) {
-		glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+		glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		double xpos, ypos;
