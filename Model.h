@@ -1,6 +1,7 @@
 #pragma once
 #include "Mesh.h"
 #include <string>
+#include <assimp/scene.h>
 
 class Model {
 public:
@@ -16,5 +17,5 @@ public:
 private:
 	void loadModel(const char* path);
 	Mesh processMesh(aiMesh* mesh);
-	void processNode(aiNode* node, aiScene* scene);
+	void processNode(aiNode* node, const aiScene* scene);
 };

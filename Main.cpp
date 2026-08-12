@@ -10,7 +10,8 @@
 #include "EBO.h"
 #include "ShaderClass.h"
 #include "Cube.h"
-
+#include "Model.h"
+#include "Mesh.h"
 
 
 
@@ -33,7 +34,7 @@ int main(){
 	glEnable(GL_DEPTH_TEST);
 
 	// Create the Object + the Light Sorce
-	
+	Model backpack("Model/BackPack/survival_guitar_backpack.glb");
 	Object light_sorce1(CubeVertices, CubeVerticesSize, CubeIndiecs, CubeIndiecsSize, "light.vert", "light.frag");
 
 
