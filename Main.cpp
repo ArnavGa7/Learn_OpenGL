@@ -10,7 +10,8 @@
 #include "EBO.h"
 #include "ShaderClass.h"
 #include "Cube.h"
-#include <assimp/Importer.hpp>
+
+
 
 
 glm::vec3 cubePositions[] =
