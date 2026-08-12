@@ -14,20 +14,6 @@
 
 
 
-glm::vec3 cubePositions[] =
-{
-	glm::vec3(-8.0f,  3.0f, -6.0f),
-	glm::vec3(5.0f, -4.0f, -12.0f),
-	glm::vec3(-3.0f,  6.0f, -16.0f),
-	glm::vec3(8.0f,  4.0f, -10.0f),
-	glm::vec3(0.0f, -6.0f, -9.0f),
-	glm::vec3(-7.0f, -2.0f, -18.0f),
-	glm::vec3(6.0f,  1.0f, -20.0f),
-	glm::vec3(-1.0f,  5.0f, -24.0f),
-	glm::vec3(10.0f, -3.0f, -17.0f),
-	glm::vec3(-10.0f,  0.0f, -13.0f)
-};
-
 
 
 // Main function of the Main File(C++)
@@ -47,7 +33,7 @@ int main(){
 	glEnable(GL_DEPTH_TEST);
 
 	// Create the Object + the Light Sorce
-	Object cube(CubeVertices, CubeVerticesSize, CubeIndiecs,CubeIndiecsSize , "default.vert", "default.frag");
+	
 	Object light_sorce1(CubeVertices, CubeVerticesSize, CubeIndiecs, CubeIndiecsSize, "light.vert", "light.frag");
 
 
@@ -55,8 +41,6 @@ int main(){
 	Texture specular("Texture's/container2_specular.png");
 
 	// Set The Position and the scale of the Light Sorce and the color for the cube
-	cube.Color = glm::vec3(1.0f);
-	cube.Scale = glm::vec3(1.0f);
 
 
 	light_sorce1.Position = glm::vec3(0.7f, 0.2f, -30.0f);
@@ -97,13 +81,7 @@ int main(){
 
 		// Draw the Cube a the Lightr Sorce in the screen
 		
-		for (unsigned int i = 0; i < 10; i++) {
-			cube.Position = cubePositions[i];
-			cube.angle = 20.0f * i;
-
-			cube.Draw(view, projection, light_sorce1.Color, light_sorce1.Position,camera.Postion);
-			
-		}
+	
 
 		light_sorce1.Draw(view, projection, light_sorce1.Color, light_sorce1.Position,camera.Postion);
 
