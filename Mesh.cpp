@@ -1,6 +1,6 @@
 #include "Mesh.h"
 
-Mesh::Mesh(std::vector<Vertex> meshvertices, std::vector<unsigned int> meshindices) {
+Mesh::Mesh(std::vector<Vertex> meshvertices, std::vector<unsigned int>  meshindices) {
 
 	// Store the mesh inside the vertices;
 	vertices = meshvertices;
