@@ -18,7 +18,7 @@ void Model::loadModel(const char* path){
         return;
     }
 
-
+    processNode(scene->mRootNode, scene);
 }
 
 Mesh Model::processMesh(aiMesh* mesh) {
@@ -55,13 +55,21 @@ Mesh Model::processMesh(aiMesh* mesh) {
  return Mesh(meshvertices, meshindices);
 }
 
-void Model::processNode(aiNode* node, aiScene* scene) {
-
-    for (int i = 0; i < node->mMeshes; i++) {
+void Model::processNode(aiNode* node, const aiScene* scene)
+{
+    for (unsigned int i = 0; i < node->mNumMeshes; i++)
+    {
         unsigned int meshIndex = node->mMeshes[i];
+
         aiMesh* mesh = scene->mMeshes[meshIndex];
+
         Mesh newMesh = processMesh(mesh);
 
         meshes.push_back(newMesh);
+    }
+
+    for (unsigned int i = 0; i < node->mNumChildren; i++)
+    {
+        processNode(node->mChildren[i], scene);
     }
 }
