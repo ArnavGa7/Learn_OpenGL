@@ -16,4 +16,5 @@ public:
 private:
 	void loadModel(const char* path);
 	Mesh processMesh(aiMesh* mesh);
+	void processNode(aiNode* node, aiScene* scene);
 };

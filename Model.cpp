@@ -54,3 +54,14 @@ Mesh Model::processMesh(aiMesh* mesh) {
 
  return Mesh(meshvertices, meshindices);
 }
+
+void Model::processNode(aiNode* node, aiScene* scene) {
+
+    for (int i = 0; i < node->mMeshes; i++) {
+        unsigned int meshIndex = node->mMeshes[i];
+        aiMesh* mesh = scene->mMeshes[meshIndex];
+        Mesh newMesh = processMesh(mesh);
+
+        meshes.push_back(newMesh);
+    }
+}
