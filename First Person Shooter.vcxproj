@@ -170,6 +170,8 @@
     <None Include="light.frag" />
     <None Include="light.vert" />
     <None Include="Model\BackPack%27\survival_guitar_backpack.glb" />
+    <None Include="Model\Katana\materials.mtl" />
+    <None Include="Model\Katana\materials.mtl.bak" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\Users\83dee\Downloads\POP_CAT.jpg" />
@@ -178,6 +180,7 @@
     <Image Include="Texture%27s\container2_specular.png" />
   </ItemGroup>
   <ItemGroup>
+    <Object Include="Model\Katana\model.obj" />
     <Object Include="Model\Sword\Sting-Sword-lowpoly.obj" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

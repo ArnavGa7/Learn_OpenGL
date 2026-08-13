@@ -34,7 +34,7 @@ int main(){
 	glEnable(GL_DEPTH_TEST);
 
 	// Create the Object + the Light Sorce
-	Model Sword("Model/Sword/Sting-Sword-lowpoly.obj");
+	Model Sword("Model/Katana/model.obj");
 	Object light_sorce1(CubeVertices, CubeVerticesSize, CubeIndiecs, CubeIndiecsSize, "light.vert", "light.frag");
 
 
