@@ -177,6 +177,9 @@
     <Image Include="Texture%27s\container2.png" />
     <Image Include="Texture%27s\container2_specular.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Object Include="Model\Sword\Sting-Sword-lowpoly.obj" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

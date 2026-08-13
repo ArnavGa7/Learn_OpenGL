@@ -137,4 +137,7 @@
       <Filter>Resource Files\Texture%27s</Filter>
     </Image>
   </ItemGroup>
+  <ItemGroup>
+    <Object Include="Model\Sword\Sting-Sword-lowpoly.obj" />
+  </ItemGroup>
 </Project>
