@@ -34,7 +34,7 @@ int main(){
 	glEnable(GL_DEPTH_TEST);
 
 	// Create the Object + the Light Sorce
-	Model Sword("Model/Katana/model.obj");
+	Model Katana("Model/Katana/model.obj");
 	Object light_sorce1(CubeVertices, CubeVerticesSize, CubeIndiecs, CubeIndiecsSize, "light.vert", "light.frag");
 
 
@@ -86,7 +86,7 @@ int main(){
 		// Bind Texture
 		diffuse.Bind(GL_TEXTURE0);
 		specular.Bind(GL_TEXTURE1);
-		Sword.Draw(shader);
+		Katana.Draw(shader);
 
 		// Draw the Cube a the Lightr Sorce in the screen
 		
