@@ -121,6 +121,7 @@
     <None Include="light.frag">
       <Filter>Resource Files\Shaders</Filter>
     </None>
+    <None Include="Model\BackPack%27\survival_guitar_backpack.glb" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\Users\83dee\Downloads\POP_CAT.jpg">

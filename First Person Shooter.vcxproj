@@ -169,6 +169,7 @@
     <None Include="default.vert" />
     <None Include="light.frag" />
     <None Include="light.vert" />
+    <None Include="Model\BackPack%27\survival_guitar_backpack.glb" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\Users\83dee\Downloads\POP_CAT.jpg" />

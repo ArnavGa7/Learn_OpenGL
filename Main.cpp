@@ -12,7 +12,7 @@
 #include "Cube.h"
 #include "Model.h"
 #include "Mesh.h"
-
+#include <glm/gtc/type_ptr.hpp>
 
 
 
@@ -34,7 +34,7 @@ int main(){
 	glEnable(GL_DEPTH_TEST);
 
 	// Create the Object + the Light Sorce
-	Model backpack("Model/BackPack/survival_guitar_backpack.glb");
+	Model backpack("Model/BackPack'/survival_guitar_backpack.glb");
 	Object light_sorce1(CubeVertices, CubeVerticesSize, CubeIndiecs, CubeIndiecsSize, "light.vert", "light.frag");
 
 
@@ -42,7 +42,7 @@ int main(){
 	Texture specular("Texture's/container2_specular.png");
 
 	// Set The Position and the scale of the Light Sorce and the color for the cube
-
+	Shader shader("default.vert", "default.frag");
 
 	light_sorce1.Position = glm::vec3(0.7f, 0.2f, -30.0f);
 	light_sorce1.Color = glm::vec3(1.0f,1.0f, 1.0f);
@@ -54,6 +54,8 @@ int main(){
 
 	// While Loop
 	while (!window.WindowShouldClose()) {
+
+		shader.Active();
 		glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -69,13 +71,17 @@ int main(){
 		camera.ProssecInput(window.window);
 		camera.Mouse_CallBack(window.window, xpos, ypos);
 
-		// Set the settings for The View Matrix(Camera Matrix)
-		glm::mat4 view = glm::lookAt(camera.Postion, camera.Postion + camera.Forward, camera.Up);
-		
+		// Set the settings for The View Matrix(Camera Matrix) and add a Model Matrix
+		glm::mat4 model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.0f, 0.0f, -5.0f));
 
+		glm::mat4 view = glm::lookAt(camera.Postion, camera.Postion + camera.Forward, camera.Up);
 		// Set the settings for the Projeection Matrix
 		glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)(window_witdh / (float)window_height), 0.1f, 100.0f);
 
+		glUniformMatrix4fv(glGetUniformLocation(shader.ID, "Meshmodel"), 1, GL_FALSE, glm::value_ptr(model));
+		glUniformMatrix4fv(glGetUniformLocation(shader.ID, "Meshprojection"), 1, GL_FALSE, glm::value_ptr(projection));
+		glUniformMatrix4fv(glGetUniformLocation(shader.ID, "Meshview"), 1, GL_FALSE, glm::value_ptr(view));
 		// Bind Texture
 		diffuse.Bind(GL_TEXTURE0);
 		specular.Bind(GL_TEXTURE1);
@@ -85,7 +91,7 @@ int main(){
 	
 
 		light_sorce1.Draw(view, projection, light_sorce1.Color, light_sorce1.Position,camera.Postion);
-
+		backpack.Draw(shader);
 	
 		// The Swap Buffer
 		window.SwapBuffers();
