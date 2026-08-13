@@ -55,7 +55,7 @@ int main(){
 	// While Loop
 	while (!window.WindowShouldClose()) {
 
-		shader.Active();
+	
 		glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -79,19 +79,21 @@ int main(){
 		// Set the settings for the Projeection Matrix
 		glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)(window_witdh / (float)window_height), 0.1f, 100.0f);
 
+		shader.Active();
 		glUniformMatrix4fv(glGetUniformLocation(shader.ID, "Meshmodel"), 1, GL_FALSE, glm::value_ptr(model));
 		glUniformMatrix4fv(glGetUniformLocation(shader.ID, "Meshprojection"), 1, GL_FALSE, glm::value_ptr(projection));
 		glUniformMatrix4fv(glGetUniformLocation(shader.ID, "Meshview"), 1, GL_FALSE, glm::value_ptr(view));
 		// Bind Texture
 		diffuse.Bind(GL_TEXTURE0);
 		specular.Bind(GL_TEXTURE1);
+		backpack.Draw(shader);
 
 		// Draw the Cube a the Lightr Sorce in the screen
 		
 	
 
 		light_sorce1.Draw(view, projection, light_sorce1.Color, light_sorce1.Position,camera.Postion);
-		backpack.Draw(shader);
+	
 	
 		// The Swap Buffer
 		window.SwapBuffers();
