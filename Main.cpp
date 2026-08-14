@@ -38,9 +38,6 @@ int main(){
 	Object light_sorce1(CubeVertices, CubeVerticesSize, CubeIndiecs, CubeIndiecsSize, "light.vert", "light.frag");
 
 
-	Texture diffuse("Texture's/container2.png");
-	Texture specular("Texture's/container2_specular.png");
-
 	// Set The Position and the scale of the Light Sorce and the color for the cube
 	Shader shader("default.vert", "default.frag");
 
@@ -81,8 +78,7 @@ int main(){
 		
 	
 		// Bind Texture
-		diffuse.Bind(GL_TEXTURE0);
-		specular.Bind(GL_TEXTURE1);
+	
 		Katana.Draw(shader, view, projection);
 
 		light_sorce1.Draw(view, projection, light_sorce1.Color, light_sorce1.Position,camera.Postion);
