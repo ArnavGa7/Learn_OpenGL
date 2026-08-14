@@ -2,7 +2,9 @@
 #include "Mesh.h"
 #include <string>
 #include <assimp/scene.h>
-
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 class Model {
 public:
 
@@ -12,7 +14,7 @@ public:
 		loadModel(path);
 	}
 
-	void Draw(Shader& shader);
+	void Draw(Shader& shader, glm::mat4 view, glm::mat4 projection);
 
 private:
 	void loadModel(const char* path);

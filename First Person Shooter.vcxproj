@@ -180,8 +180,10 @@
     <Image Include="Texture%27s\container2_specular.png" />
   </ItemGroup>
   <ItemGroup>
-    <Object Include="Model\Katana\model.obj" />
-    <Object Include="Model\Sword\Sting-Sword-lowpoly.obj" />
+    <None Include="Model\Katana\model.obj">
+      <FileType>Document</FileType>
+    </None>
+    
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -124,6 +124,7 @@
     <None Include="Model\BackPack%27\survival_guitar_backpack.glb" />
     <None Include="Model\Katana\materials.mtl.bak" />
     <None Include="Model\Katana\materials.mtl" />
+    <None Include="Model\Katana\model.obj" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\Users\83dee\Downloads\POP_CAT.jpg">
@@ -141,6 +142,5 @@
   </ItemGroup>
   <ItemGroup>
     <Object Include="Model\Sword\Sting-Sword-lowpoly.obj" />
-    <Object Include="Model\Katana\model.obj" />
   </ItemGroup>
 </Project>

@@ -74,8 +74,16 @@ void Model::processNode(aiNode* node, const aiScene* scene)
     }
 }
 
-void Model::Draw(Shader& shader)
+void Model::Draw(Shader& shader, glm::mat4 view, glm::mat4 projection)
 {
+    glm::mat4 model = glm::mat4(1.0f);
+    model = glm::translate(model, glm::vec3(0.0f, 0.0f, -5.0f));
+
+    glUniformMatrix4fv(glGetUniformLocation(shader.ID, "Meshmodel"),1, GL_FALSE, glm::value_ptr(model));
+    glUniformMatrix4fv(glGetUniformLocation(shader.ID, "Meshview"),1, GL_FALSE, glm::value_ptr(view));
+    glUniformMatrix4fv(glGetUniformLocation(shader.ID, "Meshprojection"),1, GL_FALSE, glm::value_ptr(projection));
+
+
     for (Mesh& mesh : meshes)
     {
         mesh.Draw(shader);

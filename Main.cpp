@@ -72,25 +72,18 @@ int main(){
 		camera.Mouse_CallBack(window.window, xpos, ypos);
 
 		// Set the settings for The View Matrix(Camera Matrix) and add a Model Matrix
-		glm::mat4 model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, -5.0f));
+	
 
 		glm::mat4 view = glm::lookAt(camera.Postion, camera.Postion + camera.Forward, camera.Up);
 		// Set the settings for the Projeection Matrix
 		glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)(window_witdh / (float)window_height), 0.1f, 100.0f);
 
-		shader.Active();
-		glUniformMatrix4fv(glGetUniformLocation(shader.ID, "Meshmodel"), 1, GL_FALSE, glm::value_ptr(model));
-		glUniformMatrix4fv(glGetUniformLocation(shader.ID, "Meshprojection"), 1, GL_FALSE, glm::value_ptr(projection));
-		glUniformMatrix4fv(glGetUniformLocation(shader.ID, "Meshview"), 1, GL_FALSE, glm::value_ptr(view));
+		
+	
 		// Bind Texture
 		diffuse.Bind(GL_TEXTURE0);
 		specular.Bind(GL_TEXTURE1);
-		Katana.Draw(shader);
-
-		// Draw the Cube a the Lightr Sorce in the screen
-		
-	
+		Katana.Draw(shader, view, projection);
 
 		light_sorce1.Draw(view, projection, light_sorce1.Color, light_sorce1.Position,camera.Postion);
 	
