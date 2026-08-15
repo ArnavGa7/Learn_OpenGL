@@ -44,32 +44,11 @@ void Object::Draw(glm::mat4 view, glm::mat4 projection,glm::vec3 light_Color, gl
         glUniformMatrix4fv(glGetUniformLocation(shader.ID, "view"), 1, GL_FALSE, glm::value_ptr(view));
         glUniformMatrix4fv(glGetUniformLocation(shader.ID, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
 
-        // 
-      
-        glUniform3fv(glGetUniformLocation(shader.ID, "view_Position"), 1, glm::value_ptr(camera_Position));
+
 
         // This is from light.frag
         glUniform3fv(glGetUniformLocation(shader.ID, "light_Color"), 1, glm::value_ptr(light_Color));
 
-
-        // For the Point Light Struct(0)
-        glUniform3f(glGetUniformLocation(shader.ID, "point_light[0].ambient"), 0.3f, 0.3f, 0.3f);
-        glUniform3f(glGetUniformLocation(shader.ID, "point_light[0].diffuse"), 1.0f, 1.0f, 1.0f);
-        glUniform3f(glGetUniformLocation(shader.ID, "point_light[0].specular"), 1.0f, 1.0f, 1.0f);
-        glUniform1f(glGetUniformLocation(shader.ID, "point_light[0].constant"), 1.0f);
-        glUniform1f(glGetUniformLocation(shader.ID, "point_light[0].linear"),  0.00018f);
-        glUniform1f(glGetUniformLocation(shader.ID, "point_light[0].quadratic"), 0.009f);
-        glUniform3fv(glGetUniformLocation(shader.ID, "point_light[0].Position"), 1, glm::value_ptr(Light_Position1));
-
-        // For the Point Light Struct(1)
-
-        glUniform3f(glGetUniformLocation(shader.ID, "dirlight.Direction"), -0.2, -1.0, -0.3);
-
-        // Light Maps and Texture
-        /* Diffuse Texture is for the whole cube But specluar texture is the Metle part of the Texture so the onlt Matel part shines!*/
-        glUniform1i(glGetUniformLocation(shader.ID, "material.diffuse"), 0);
-        glUniform1i(glGetUniformLocation(shader.ID, "material.specular"), 1);
-        glUniform1f(glGetUniformLocation(shader.ID, "material.shininess"), 32.0f);
         vao.Bind();
 
 

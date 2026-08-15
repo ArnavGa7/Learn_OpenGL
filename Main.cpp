@@ -37,7 +37,7 @@ int main(){
 	Model Katana("Model/Katana/model.obj");
 	Object light_sorce1(CubeVertices, CubeVerticesSize, CubeIndiecs, CubeIndiecsSize, "light.vert", "light.frag");
 
-
+	
 	// Set The Position and the scale of the Light Sorce and the color for the cube
 	Shader shader("default.vert", "default.frag");
 

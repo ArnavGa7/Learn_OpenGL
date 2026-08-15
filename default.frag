@@ -6,8 +6,9 @@ in vec3 Normal;
 in vec2 Texture;
 
 
-
 void main(){
 
-	FragColor = vec4(1.0, 0.0, 0.0, 1.0);
+		
+
+FragColor = vec4(Normal * 0.5 + 0.5, 1.0);
 }
