@@ -34,7 +34,7 @@ int main(){
 	glEnable(GL_DEPTH_TEST);
 
 	// Create the Object + the Light Sorce
-	Model Katana("Model/Katana/model.obj");
+	Model Backpack("Model/backpack/backpack.obj");
 	Object light_sorce1(CubeVertices, CubeVerticesSize, CubeIndiecs, CubeIndiecsSize, "light.vert", "light.frag");
 
 	
@@ -79,7 +79,7 @@ int main(){
 	
 		// Bind Texture
 	
-		Katana.Draw(shader, view, projection);
+		Backpack.Draw(shader, view, projection);
 
 		light_sorce1.Draw(view, projection, light_sorce1.Color, light_sorce1.Position,camera.Postion);
 	

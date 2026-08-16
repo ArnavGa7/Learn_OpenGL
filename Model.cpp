@@ -21,9 +21,10 @@ void Model::loadModel(const char* path){
     processNode(scene->mRootNode, scene);
 }
 
-Mesh Model::processMesh(aiMesh* mesh) {
+Mesh Model::processMesh(aiMesh* mesh, const aiScene* scene) {
     std::vector<Vertex> meshvertices;
     std::vector<unsigned int> meshindices;
+    std::vector<Textures> meshtextures;
 
     for (int i = 0; i < mesh->mNumVertices; i++) {
         Vertex vertex;
@@ -52,7 +53,8 @@ Mesh Model::processMesh(aiMesh* mesh) {
         }
     }
 
- return Mesh(meshvertices, meshindices);
+    aiMaterial* material = scene->mMaterials[mesh->mMaterialIndex];
+ return Mesh(meshvertices, meshindices, meshtextures);
 }
 
 void Model::processNode(aiNode* node, const aiScene* scene)
@@ -63,7 +65,7 @@ void Model::processNode(aiNode* node, const aiScene* scene)
 
         aiMesh* mesh = scene->mMeshes[meshIndex];
 
-        Mesh newMesh = processMesh(mesh);
+        Mesh newMesh = processMesh(mesh, scene);
 
         meshes.push_back(newMesh);
     }

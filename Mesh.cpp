@@ -1,11 +1,11 @@
 #include "Mesh.h"
 
-Mesh::Mesh(std::vector<Vertex> meshvertices, std::vector<unsigned int>  meshindices) {
+Mesh::Mesh(std::vector<Vertex> meshvertices, std::vector<unsigned int> meshindices, std::vector<Textures> meshtextures) {
 
 	// Store the mesh inside the vertices;
 	vertices = meshvertices;
 	indices = meshindices;
-
+	textures = meshtextures;
 	glGenVertexArrays(1, &VAO);
 	glGenBuffers(1, &VBO);
 	glGenBuffers(1, &EBO);

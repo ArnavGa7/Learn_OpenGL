@@ -12,16 +12,22 @@ struct Vertex
 	glm::vec2 Texture;
 };
 
+struct Textures {
+
+	GLuint ID;
+	std::string Type;
+	std::string path;
+};
 class Mesh {
 public:
 	std::vector<Vertex> vertices;
 	std::vector<unsigned int> indices;
-
+	std::vector<Textures> textures;
 	GLuint VAO;
 	GLuint VBO;
 	GLuint EBO;
 
-	Mesh(std::vector<Vertex> meshvertices, std::vector<unsigned int> meshindices);
+	Mesh(std::vector<Vertex> meshvertices, std::vector<unsigned int> meshindices,  std::vector<Textures> meshtextures);
 
 	void Draw(Shader& shader);
 };
