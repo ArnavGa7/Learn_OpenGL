@@ -3,7 +3,7 @@
 #include <glm/glm.hpp>
 #include <glad/glad.h>
 #include "ShaderClass.h"
-
+#include "Texture.h"
 
 struct Vertex
 {
@@ -12,22 +12,17 @@ struct Vertex
 	glm::vec2 Texture;
 };
 
-struct Textures {
 
-	GLuint ID;
-	std::string Type;
-	std::string path;
-};
 class Mesh {
 public:
 	std::vector<Vertex> vertices;
 	std::vector<unsigned int> indices;
-	std::vector<Textures> textures;
+	std::vector<Texture> textures;
 	GLuint VAO;
 	GLuint VBO;
 	GLuint EBO;
 
-	Mesh(std::vector<Vertex> meshvertices, std::vector<unsigned int> meshindices,  std::vector<Textures> meshtextures);
+	Mesh(std::vector<Vertex> meshvertices, std::vector<unsigned int> meshindices,  std::vector<Texture> meshtextures);
 
 	void Draw(Shader& shader);
 };

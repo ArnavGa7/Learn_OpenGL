@@ -1,6 +1,6 @@
 #include "Mesh.h"
 
-Mesh::Mesh(std::vector<Vertex> meshvertices, std::vector<unsigned int> meshindices, std::vector<Textures> meshtextures) {
+Mesh::Mesh(std::vector<Vertex> meshvertices, std::vector<unsigned int> meshindices, std::vector<Texture> meshtextures) {
 
 	// Store the mesh inside the vertices;
 	vertices = meshvertices;
@@ -30,12 +30,28 @@ Mesh::Mesh(std::vector<Vertex> meshvertices, std::vector<unsigned int> meshindic
 	glBindVertexArray(0);
 }
 
-void Mesh::Draw(Shader& shader) {
+void Mesh::Draw(Shader& shader)
+{
 	shader.Active();
+
+	for (unsigned int i = 0; i < textures.size(); i++)
+	{
+		textures[i].Bind(GL_TEXTURE0 + i);
+
+		glUniform1i(
+			glGetUniformLocation(shader.ID, textures[i].type.c_str()),
+			i
+		);
+	}
 
 	glBindVertexArray(VAO);
 
-	glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_INT, 0);
+	glDrawElements(
+		GL_TRIANGLES,
+		indices.size(),
+		GL_UNSIGNED_INT,
+		0
+	);
 
 	glBindVertexArray(0);
 }
