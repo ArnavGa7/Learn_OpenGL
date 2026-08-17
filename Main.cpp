@@ -34,7 +34,7 @@ int main(){
 	glEnable(GL_DEPTH_TEST);
 
 	// Create the Object + the Light Sorce
-	Object cube(CubeVertices, CubeVerticesSize, CubeIndiecs, CubeIndiecsSize, "default.vert", "default.frag");
+	Object cube(CubeVertices, CubeVerticesSize, CubeIndiecs, CubeIndiecsSize, "cube.vert", "cube.frag");
 	Object light_sorce1(CubeVertices, CubeVerticesSize, CubeIndiecs, CubeIndiecsSize, "light.vert", "light.frag");
 
 	
