@@ -34,7 +34,7 @@ int main(){
 	glEnable(GL_DEPTH_TEST);
 
 	// Create the Object + the Light Sorce
-	Model Backpack("Model/backpack/backpack.obj");
+	Object cube(CubeVertices, CubeVerticesSize, CubeIndiecs, CubeIndiecsSize, "default.vert", "default.frag");
 	Object light_sorce1(CubeVertices, CubeVerticesSize, CubeIndiecs, CubeIndiecsSize, "light.vert", "light.frag");
 
 	
@@ -45,6 +45,10 @@ int main(){
 	light_sorce1.Color = glm::vec3(1.0f,1.0f, 1.0f);
 	light_sorce1.Scale = glm::vec3(0.5f);
 
+
+	cube.Position = glm::vec3(0.0f, 0.0f, 0.0f);
+	cube.Color = glm::vec3(1.0f, 0.0f, 0.0f);
+	cube.Scale = glm::vec3(1.0f);
 
 
 
@@ -79,9 +83,9 @@ int main(){
 	
 		// Bind Texture
 	
-		Backpack.Draw(shader, view, projection);
+		cube.Draw(view, projection, light_sorce1.Color, light_sorce1.Position, camera.Postion, cube.Color);
 
-		light_sorce1.Draw(view, projection, light_sorce1.Color, light_sorce1.Position,camera.Postion);
+		light_sorce1.Draw(view, projection, light_sorce1.Color, light_sorce1.Position,camera.Postion, cube.Color);
 	
 	
 		// The Swap Buffer

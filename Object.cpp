@@ -27,7 +27,7 @@ Object::Object(GLfloat* vertices, GLsizeiptr vertexSize, GLuint* indices, GLsize
 }
 
 // Draw Function 
-void Object::Draw(glm::mat4 view, glm::mat4 projection,glm::vec3 light_Color, glm::vec3 Light_Position1,glm::vec3 camera_Position){
+void Object::Draw(glm::mat4 view, glm::mat4 projection,glm::vec3 light_Color, glm::vec3 Light_Position1,glm::vec3 camera_Position, glm::vec3 cube_Color){
 
         shader.Active();
 
@@ -45,6 +45,10 @@ void Object::Draw(glm::mat4 view, glm::mat4 projection,glm::vec3 light_Color, gl
         glUniformMatrix4fv(glGetUniformLocation(shader.ID, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
 
 
+        glUniformMatrix4fv(glGetUniformLocation(shader.ID, "Meshmodel"),1, GL_FALSE, glm::value_ptr(model));
+        glUniformMatrix4fv(glGetUniformLocation(shader.ID, "Meshview"),1,GL_FALSE, glm::value_ptr(view));
+        glUniformMatrix4fv(glGetUniformLocation(shader.ID, "Meshprojection"),1,GL_FALSE, glm::value_ptr(projection));
+        glUniform3fv(glGetUniformLocation(shader.ID, "Color"), 1, glm::value_ptr(cube_Color));
 
         // This is from light.frag
         glUniform3fv(glGetUniformLocation(shader.ID, "light_Color"), 1, glm::value_ptr(light_Color));
