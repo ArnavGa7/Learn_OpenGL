@@ -13,6 +13,7 @@ Learning modern OpenGL in C++.
 - GLSL Shaders
 - Light Maps
 - Light Casters
+- Model Loading
 ## Technologies
 
 - C++
@@ -27,7 +28,7 @@ Learning modern OpenGL in C++.
 - ✅ Phong Lighting
 - ✅ Materials
 - ✅ Multiple Light Sources
-- ⏳ Model Loading
+- ✅ Model Loading
 - ⏳ Shadow Mapping
 
 ## Screenshot
