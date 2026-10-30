@@ -1,6 +1,6 @@
 #include <iostream>
-#include 
-#include <GLFW/glfw3.h>
+
+
 #include "Window.h"
 #include "Texture.h"
 #include "Camera.h"
@@ -36,7 +36,7 @@ int main(){
 	// Create the Object + the Light Sorce
 	Object cube(CubeVertices, CubeVerticesSize, CubeIndiecs, CubeIndiecsSize, "cube.vert", "cube.frag");
 	Object light_sorce1(CubeVertices, CubeVerticesSize, CubeIndiecs, CubeIndiecsSize, "light.vert", "light.frag");
-
+    Model model("model/backpack/backpack.obj");
 	
 	// Set The Position and the scale of the Light Sorce and the color for the cube
 	Shader shader("default.vert", "default.frag");
@@ -83,10 +83,9 @@ int main(){
 	
 		// Bind Texture
 	
-		cube.Draw(view, projection, light_sorce1.Color, light_sorce1.Position, camera.Postion, cube.Color);
-
+		
 		light_sorce1.Draw(view, projection, light_sorce1.Color, light_sorce1.Position,camera.Postion, cube.Color);
-	
+		model.Draw(shader, view, projection);
 	
 		// The Swap Buffer
 		window.SwapBuffers();

@@ -3,17 +3,17 @@
 
 # compile C with /usr/bin/cc
 # compile CXX with /usr/bin/c++
-C_DEFINES = -DGL_SILENCE_DEPRECATION
+C_DEFINES = 
 
-C_INCLUDES = -I/Users/arnav/Documents/GitHub/Learn_OpenGL -I/Users/arnav/Documents/GitHub/Learn_OpenGL/Libarys/include -F/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -isystem /opt/homebrew/include
+C_INCLUDES = -I/Users/arnav/Documents/GitHub/Learn_OpenGL -I/Users/arnav/Documents/GitHub/Learn_OpenGL/Libarys/include -isystem /opt/homebrew/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks
 
 C_FLAGSarm64 =  -arch arm64
 
 C_FLAGS =  -arch arm64
 
-CXX_DEFINES = -DGL_SILENCE_DEPRECATION
+CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/arnav/Documents/GitHub/Learn_OpenGL -I/Users/arnav/Documents/GitHub/Learn_OpenGL/Libarys/include -F/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -isystem /opt/homebrew/include
+CXX_INCLUDES = -I/Users/arnav/Documents/GitHub/Learn_OpenGL -I/Users/arnav/Documents/GitHub/Learn_OpenGL/Libarys/include -isystem /opt/homebrew/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks
 
 CXX_FLAGSarm64 = -std=gnu++17 -arch arm64
 

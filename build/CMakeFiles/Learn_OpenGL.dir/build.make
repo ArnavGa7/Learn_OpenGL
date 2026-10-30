@@ -72,10 +72,24 @@ include CMakeFiles/Learn_OpenGL.dir/flags.make
 CMakeFiles/Learn_OpenGL.dir/codegen:
 .PHONY : CMakeFiles/Learn_OpenGL.dir/codegen
 
+CMakeFiles/Learn_OpenGL.dir/Main.cpp.o: CMakeFiles/Learn_OpenGL.dir/flags.make
+CMakeFiles/Learn_OpenGL.dir/Main.cpp.o: /Users/arnav/Documents/GitHub/Learn_OpenGL/Main.cpp
+CMakeFiles/Learn_OpenGL.dir/Main.cpp.o: CMakeFiles/Learn_OpenGL.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/arnav/Documents/GitHub/Learn_OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Learn_OpenGL.dir/Main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Learn_OpenGL.dir/Main.cpp.o -MF CMakeFiles/Learn_OpenGL.dir/Main.cpp.o.d -o CMakeFiles/Learn_OpenGL.dir/Main.cpp.o -c /Users/arnav/Documents/GitHub/Learn_OpenGL/Main.cpp
+
+CMakeFiles/Learn_OpenGL.dir/Main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Learn_OpenGL.dir/Main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/arnav/Documents/GitHub/Learn_OpenGL/Main.cpp > CMakeFiles/Learn_OpenGL.dir/Main.cpp.i
+
+CMakeFiles/Learn_OpenGL.dir/Main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Learn_OpenGL.dir/Main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/arnav/Documents/GitHub/Learn_OpenGL/Main.cpp -o CMakeFiles/Learn_OpenGL.dir/Main.cpp.s
+
 CMakeFiles/Learn_OpenGL.dir/Camera.cpp.o: CMakeFiles/Learn_OpenGL.dir/flags.make
 CMakeFiles/Learn_OpenGL.dir/Camera.cpp.o: /Users/arnav/Documents/GitHub/Learn_OpenGL/Camera.cpp
 CMakeFiles/Learn_OpenGL.dir/Camera.cpp.o: CMakeFiles/Learn_OpenGL.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/arnav/Documents/GitHub/Learn_OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Learn_OpenGL.dir/Camera.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/arnav/Documents/GitHub/Learn_OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Learn_OpenGL.dir/Camera.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Learn_OpenGL.dir/Camera.cpp.o -MF CMakeFiles/Learn_OpenGL.dir/Camera.cpp.o.d -o CMakeFiles/Learn_OpenGL.dir/Camera.cpp.o -c /Users/arnav/Documents/GitHub/Learn_OpenGL/Camera.cpp
 
 CMakeFiles/Learn_OpenGL.dir/Camera.cpp.i: cmake_force
@@ -89,7 +103,7 @@ CMakeFiles/Learn_OpenGL.dir/Camera.cpp.s: cmake_force
 CMakeFiles/Learn_OpenGL.dir/Cube.cpp.o: CMakeFiles/Learn_OpenGL.dir/flags.make
 CMakeFiles/Learn_OpenGL.dir/Cube.cpp.o: /Users/arnav/Documents/GitHub/Learn_OpenGL/Cube.cpp
 CMakeFiles/Learn_OpenGL.dir/Cube.cpp.o: CMakeFiles/Learn_OpenGL.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/arnav/Documents/GitHub/Learn_OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Learn_OpenGL.dir/Cube.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/arnav/Documents/GitHub/Learn_OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Learn_OpenGL.dir/Cube.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Learn_OpenGL.dir/Cube.cpp.o -MF CMakeFiles/Learn_OpenGL.dir/Cube.cpp.o.d -o CMakeFiles/Learn_OpenGL.dir/Cube.cpp.o -c /Users/arnav/Documents/GitHub/Learn_OpenGL/Cube.cpp
 
 CMakeFiles/Learn_OpenGL.dir/Cube.cpp.i: cmake_force
@@ -103,7 +117,7 @@ CMakeFiles/Learn_OpenGL.dir/Cube.cpp.s: cmake_force
 CMakeFiles/Learn_OpenGL.dir/EBO.cpp.o: CMakeFiles/Learn_OpenGL.dir/flags.make
 CMakeFiles/Learn_OpenGL.dir/EBO.cpp.o: /Users/arnav/Documents/GitHub/Learn_OpenGL/EBO.cpp
 CMakeFiles/Learn_OpenGL.dir/EBO.cpp.o: CMakeFiles/Learn_OpenGL.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/arnav/Documents/GitHub/Learn_OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Learn_OpenGL.dir/EBO.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/arnav/Documents/GitHub/Learn_OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Learn_OpenGL.dir/EBO.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Learn_OpenGL.dir/EBO.cpp.o -MF CMakeFiles/Learn_OpenGL.dir/EBO.cpp.o.d -o CMakeFiles/Learn_OpenGL.dir/EBO.cpp.o -c /Users/arnav/Documents/GitHub/Learn_OpenGL/EBO.cpp
 
 CMakeFiles/Learn_OpenGL.dir/EBO.cpp.i: cmake_force
@@ -113,20 +127,6 @@ CMakeFiles/Learn_OpenGL.dir/EBO.cpp.i: cmake_force
 CMakeFiles/Learn_OpenGL.dir/EBO.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Learn_OpenGL.dir/EBO.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/arnav/Documents/GitHub/Learn_OpenGL/EBO.cpp -o CMakeFiles/Learn_OpenGL.dir/EBO.cpp.s
-
-CMakeFiles/Learn_OpenGL.dir/Main.cpp.o: CMakeFiles/Learn_OpenGL.dir/flags.make
-CMakeFiles/Learn_OpenGL.dir/Main.cpp.o: /Users/arnav/Documents/GitHub/Learn_OpenGL/Main.cpp
-CMakeFiles/Learn_OpenGL.dir/Main.cpp.o: CMakeFiles/Learn_OpenGL.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/arnav/Documents/GitHub/Learn_OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Learn_OpenGL.dir/Main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Learn_OpenGL.dir/Main.cpp.o -MF CMakeFiles/Learn_OpenGL.dir/Main.cpp.o.d -o CMakeFiles/Learn_OpenGL.dir/Main.cpp.o -c /Users/arnav/Documents/GitHub/Learn_OpenGL/Main.cpp
-
-CMakeFiles/Learn_OpenGL.dir/Main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Learn_OpenGL.dir/Main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/arnav/Documents/GitHub/Learn_OpenGL/Main.cpp > CMakeFiles/Learn_OpenGL.dir/Main.cpp.i
-
-CMakeFiles/Learn_OpenGL.dir/Main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Learn_OpenGL.dir/Main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/arnav/Documents/GitHub/Learn_OpenGL/Main.cpp -o CMakeFiles/Learn_OpenGL.dir/Main.cpp.s
 
 CMakeFiles/Learn_OpenGL.dir/Mesh.cpp.o: CMakeFiles/Learn_OpenGL.dir/flags.make
 CMakeFiles/Learn_OpenGL.dir/Mesh.cpp.o: /Users/arnav/Documents/GitHub/Learn_OpenGL/Mesh.cpp
@@ -284,10 +284,10 @@ CMakeFiles/Learn_OpenGL.dir/glad.c.s: cmake_force
 
 # Object files for target Learn_OpenGL
 Learn_OpenGL_OBJECTS = \
+"CMakeFiles/Learn_OpenGL.dir/Main.cpp.o" \
 "CMakeFiles/Learn_OpenGL.dir/Camera.cpp.o" \
 "CMakeFiles/Learn_OpenGL.dir/Cube.cpp.o" \
 "CMakeFiles/Learn_OpenGL.dir/EBO.cpp.o" \
-"CMakeFiles/Learn_OpenGL.dir/Main.cpp.o" \
 "CMakeFiles/Learn_OpenGL.dir/Mesh.cpp.o" \
 "CMakeFiles/Learn_OpenGL.dir/Model.cpp.o" \
 "CMakeFiles/Learn_OpenGL.dir/Object.cpp.o" \
@@ -303,10 +303,10 @@ Learn_OpenGL_OBJECTS = \
 # External object files for target Learn_OpenGL
 Learn_OpenGL_EXTERNAL_OBJECTS =
 
+Learn_OpenGL: CMakeFiles/Learn_OpenGL.dir/Main.cpp.o
 Learn_OpenGL: CMakeFiles/Learn_OpenGL.dir/Camera.cpp.o
 Learn_OpenGL: CMakeFiles/Learn_OpenGL.dir/Cube.cpp.o
 Learn_OpenGL: CMakeFiles/Learn_OpenGL.dir/EBO.cpp.o
-Learn_OpenGL: CMakeFiles/Learn_OpenGL.dir/Main.cpp.o
 Learn_OpenGL: CMakeFiles/Learn_OpenGL.dir/Mesh.cpp.o
 Learn_OpenGL: CMakeFiles/Learn_OpenGL.dir/Model.cpp.o
 Learn_OpenGL: CMakeFiles/Learn_OpenGL.dir/Object.cpp.o
@@ -320,8 +320,8 @@ Learn_OpenGL: CMakeFiles/Learn_OpenGL.dir/stb_image.cpp.o
 Learn_OpenGL: CMakeFiles/Learn_OpenGL.dir/glad.c.o
 Learn_OpenGL: CMakeFiles/Learn_OpenGL.dir/build.make
 Learn_OpenGL: /opt/homebrew/lib/libglfw.3.5.dylib
-Learn_OpenGL: /opt/homebrew/lib/libglm.dylib
 Learn_OpenGL: /opt/homebrew/lib/libassimp.6.0.5.dylib
+Learn_OpenGL: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/OpenGL.framework
 Learn_OpenGL: /Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk/usr/lib/libz.tbd
 Learn_OpenGL: CMakeFiles/Learn_OpenGL.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/arnav/Documents/GitHub/Learn_OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable Learn_OpenGL"
